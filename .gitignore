@@ -1,0 +1,46 @@
+# ── Virtual environments ────────────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+.vscode
+.pytest_cache
+
+# ── Secrets — NEVER commit these ───────────────────────────────
+.env
+.env.*
+
+# ── Data files — do NOT commit CSVs to GitHub ──────────────────
+data/
+*.csv
+*.xlsx
+*.xls
+
+# ── Jupyter artifacts ───────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ── Python bytecode ─────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# ── Build / packaging ───────────────────────────────────────────
+dist/
+build/
+*.egg-info/
+*.egg
+
+# ── Logs ────────────────────────────────────────────────────────
+*.log
+logs/
+
+# ── OS artifacts ────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── IDEs ────────────────────────────────────────────────────────
+.idea/
+*.swp
+*.swo
