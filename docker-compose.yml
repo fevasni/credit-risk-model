@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  credit-risk-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: credit-risk-api
+    ports:
+      - "8000:8000"
+    environment:
+      - MLFLOW_TRACKING_URI=file:./mlruns
+      - MODEL_REGISTRY_NAME=credit-risk-model
+      - MODEL_STAGE=Production
+    volumes:
+      - ./mlruns:/app/mlruns
+      - ./data:/app/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
